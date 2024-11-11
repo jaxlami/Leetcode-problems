@@ -1,10 +1,10 @@
-nums = [16,17,71,62,12,24,14]
-steps = []
-steps.append(nums[0])
+candidates = [10,20,13,4,5,1]
+max_set=0
+for b in range(24):
+    b_bit_set=0
 
-for i in range(len(nums)-1):
-    if steps[i]&nums[i+1] != 0:
-        steps.append(nums[i]&nums[i+1])
-
-print(steps)
+    for x in candidates:
+        b_bit_set+=(x>>b &1)
+    print(b_bit_set)
+    max_set=max(max_set, b_bit_set)
 
